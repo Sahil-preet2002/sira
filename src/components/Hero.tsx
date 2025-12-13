@@ -145,7 +145,7 @@ export default function Hero() {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                window.lenis?.scrollTo("#events");
+                window.lenis?.scrollTo("#about");
               }}
               className="group relative px-8 py-4 bg-transparent border border-white/30 text-white font-bold text-xs sm:text-sm tracking-widest uppercase overflow-hidden hover:scale-105 transition-transform duration-300 min-w-[160px]"
             >
