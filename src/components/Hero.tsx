@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,6 +8,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null); // Top Text
+  const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date("2025-12-24T10:00:00-07:00").getTime(); // Edmonton MST (UTC-7)
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        return;
+      }
+
+      setTimeLeft({
+        d: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        h: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        m: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        s: Math.floor((distance % (1000 * 60)) / 1000),
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -102,12 +126,24 @@ export default function Hero() {
         {/* 2. Centered Content Layer */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center p-4 sm:p-12 transform-style-3d translate-z-20">
           {/* Top Badge */}
+          {/* Top Badge - Countdown */}
           <div className="mb-4 sm:mb-8 opacity-0 hero-fade-in translate-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/20 bg-black/20 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-              <span className="text-white/90 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium">
-                Est. 2025 • Canada
-              </span>
+            <div className="inline-flex items-center gap-3 px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/10 bg-black/40 backdrop-blur-md shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse shadow-[0_0_8px_rgba(220,38,38,0.8)]"></span>
+              <div className="flex items-center gap-2 sm:gap-4 text-white font-mono text-[10px] sm:text-xs tracking-widest uppercase">
+                <span className="text-white/60 hidden sm:inline">
+                  Event Starts In:
+                </span>
+                <div className="flex gap-2">
+                  <span>{timeLeft.d}d</span>
+                  <span>:</span>
+                  <span>{timeLeft.h}h</span>
+                  <span>:</span>
+                  <span>{timeLeft.m}m</span>
+                  <span>:</span>
+                  <span>{timeLeft.s}s</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -138,7 +174,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 bg-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
-                Book Tickets
+                Buy Tickets
               </span>
             </button>
 

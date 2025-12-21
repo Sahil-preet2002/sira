@@ -2,9 +2,9 @@ import { Star } from "lucide-react";
 
 export default function Marquee() {
   const baseItems = [
-    "Germany — 785 15h Street, Office 478 Berlin, De 81566",
-    "Get In Touch — phone: +1(800)123-4566",
-    "Open Hours : Mon-Fri: 9 AM – 6 PM Saturday: 9 AM – 4 PM Sunday: Closed",
+    "The Superhit Tour",
+    "Vishal And Sheykhar",
+    "Live in Edmonton",
   ];
 
   // Duplicate items to ensure sufficient width for larger screens
@@ -15,18 +15,18 @@ export default function Marquee() {
       <div className="animate-marquee flex items-center whitespace-nowrap w-max will-change-transform">
         {/* First Set */}
         {items.map((item, i) => (
-          <div key={`a-${i}`} className="flex items-center mx-8">
-            <Star className="w-3 h-3 text-red-950 fill-red-950 mr-8 animate-spin-slow" />
-            <span className="font-serif font-bold text-lg md:text-2xl tracking-widest italic opacity-90 mx-2">
+          <div key={`a-${i}`} className="flex items-center mx-4">
+            <Star className="w-3 h-3 text-red-950 fill-red-950 mr-3 animate-spin-slow" />
+            <span className="font-serif font-bold text-lg md:text-2xl tracking-widest italic opacity-90 mx-2 uppercase">
               {item}
             </span>
           </div>
         ))}
         {/* Duplicate Set for Loop */}
         {items.map((item, i) => (
-          <div key={`b-${i}`} className="flex items-center mx-8">
-            <Star className="w-3 h-3 text-red-950 fill-red-950 mr-8 animate-spin-slow" />
-            <span className="font-serif font-bold text-lg md:text-2xl tracking-widest italic opacity-90 mx-2">
+          <div key={`b-${i}`} className="flex items-center mx-4">
+            <Star className="w-3 h-3 text-red-950 fill-red-950 mr-3 animate-spin-slow" />
+            <span className="font-serif font-bold text-lg md:text-2xl tracking-widest italic opacity-90 mx-2 uppercase">
               {item}
             </span>
           </div>
