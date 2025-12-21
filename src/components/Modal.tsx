@@ -7,7 +7,7 @@ export default function Modal() {
   const [isOpen, setIsOpen] = useState(false);
   const [context, setContext] = useState<"Contact" | "Tickets">("Contact");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  // const [phone, setPhone] = useState(""); // Unused
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -63,7 +63,8 @@ export default function Modal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes("@")) {
+    // Validate email or phone (simple check for non-empty)
+    if (!email || email.length < 3) {
       setError(true);
       return;
     }
@@ -82,13 +83,15 @@ export default function Modal() {
       closeModal();
       if (context === "Tickets" && newTab) {
         localStorage.setItem("userEmail", email);
-        newTab.location.href = "https://ticketmaster.ca";
+        newTab.location.href =
+          "https://www.ticketmaster.ca/event/1100638F104A9995";
       } else {
         // Trigger Toast
         window.dispatchEvent(new CustomEvent("show-toast"));
       }
       setEmail("");
-      setPhone("");
+      // Phone is not used in the form, but kept in state to avoid breakage if referenced elsewhere, though effectively unused.
+      // Removed setPhone("") as per previous cleanup.
     }, 1500);
   };
 
@@ -120,54 +123,40 @@ export default function Modal() {
 
         <div className="text-center mb-6 md:mb-10">
           <h2 className="font-serif font-bold text-2xl md:text-3xl text-white mb-2">
-            {context === "Tickets" ? "Book Tickets" : "Contact Us"}
+            {context === "Tickets" ? "Buy Tickets" : "Contact Us"}
           </h2>
+          {/* Tag Line */}
+          <p className="text-white/70 text-sm md:text-base mb-4 font-light tracking-wide">
+            Proceed to Tickmaster to move ahead.
+          </p>
           <div className="w-16 h-px bg-red-700 mx-auto"></div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
-              Your Email
-            </label>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="relative group">
             <input
-              type="email"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="vip@example.com"
-              className="w-full bg-[#0a0a0a] border border-white/10 focus:border-red-600 text-white py-4 px-4 focus:outline-none transition-colors font-serif placeholder-gray-600"
+              placeholder="Enter your email or phone"
+              className="w-full bg-white text-black placeholder-gray-500 border-none py-3 px-4 text-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition-colors duration-300 text-center font-serif rounded-sm"
             />
             {error && (
-              <p className="text-red-500 text-xs mt-2">
-                Please provide a valid email.
+              <p className="text-red-500 text-xs mt-2 text-center">
+                Please provide a valid email or phone number.
               </p>
             )}
-          </div>
-
-          <div>
-            <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
-              Phone Number (Optional)
-            </label>
-            <input
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="+1 (555) 000-0000"
-              className="w-full bg-[#0a0a0a] border border-white/10 focus:border-red-600 text-white py-4 px-4 focus:outline-none transition-colors font-serif placeholder-gray-600"
-            />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-red-700 text-white font-bold py-4 hover:bg-red-800 transition-all uppercase tracking-widest text-xs shadow-lg flex justify-center items-center cursor-pointer"
+            className="w-full bg-red-600 text-white font-bold py-4 hover:bg-red-700 transition-all uppercase tracking-widest text-xs shadow-lg flex justify-center items-center cursor-pointer rounded-full"
           >
             {loading ? (
               <Loader2 className="w-4 h-4 animate-spin text-white" />
             ) : (
-              <span>
-                {context === "Tickets" ? "Continue to Booking" : "Send Inquiry"}
-              </span>
+              <span>Continue</span>
             )}
           </button>
         </form>
