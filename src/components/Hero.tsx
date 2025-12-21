@@ -113,7 +113,7 @@ export default function Hero() {
             className="w-full h-full object-cover scale-105"
           >
             <source
-              src="https://videos.pexels.com/video-files/2022395/2022395-hd_1920_1080_30fps.mp4"
+              src="https://0q6cvqlghb3ubdsz.public.blob.vercel-storage.com/bg_video.mp4"
               type="video/mp4"
             />
           </video>
