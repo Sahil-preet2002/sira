@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
-// import Services from "@/components/Services";
+import Services from "@/components/Services";
 import Events from "@/components/Events";
 import Footer from "@/components/Footer";
 import Modal from "@/components/Modal";
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <About />
-      {/* <Services /> */}
+      <Services />
       <Events />
       <Footer />
       <Modal />

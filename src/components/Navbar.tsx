@@ -57,7 +57,7 @@ export default function Navbar() {
               About
               <span className="absolute -bottom-2 left-0 w-0 h-px bg-red-600 transition-all group-hover:w-full"></span>
             </Link>
-            {/* <Link
+            <Link
               href="#services"
               onClick={(e) => {
                 e.preventDefault();
@@ -67,7 +67,7 @@ export default function Navbar() {
             >
               Services
               <span className="absolute -bottom-2 left-0 w-0 h-px bg-red-600 transition-all group-hover:w-full"></span>
-            </Link> */}
+            </Link>
 
             {/* Desktop Dropdown */}
             <div className="relative group">
@@ -112,7 +112,7 @@ export default function Navbar() {
               onClick={() => window.openModal?.("Tickets")}
               className="bg-red-700 px-6 py-2 text-sm uppercase tracking-widest text-white hover:bg-red-800 transition-all duration-300 cursor-pointer"
             >
-              Buy Tickets
+              Get Tickets
             </button>
           </div>
 
@@ -261,7 +261,7 @@ export default function Navbar() {
                 }}
                 className="w-full py-5 bg-red-700 text-white uppercase tracking-widest text-xs hover:bg-red-800 transition-colors mb-4 cursor-pointer"
               >
-                Buy Tickets
+                Get Tickets
               </button>
               <button
                 onClick={() => {
