@@ -118,7 +118,7 @@ export default function Hero() {
             />
           </video>
           {/* Elegant Dark Overlay */}
-          <div className="absolute inset-0 bg-black/40 sm:bg-black/30 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-black/70 sm:bg-black/30 mix-blend-multiply"></div>
           {/* Subtle Grain */}
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
         </div>

@@ -37,8 +37,8 @@ export default function Events() {
               <div className="absolute inset-0 bg-red-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
               <div className="relative overflow-hidden aspect-3/4 mb-6 border border-white/10 group-hover:border-red-600/30 transition-all duration-500">
                 <Image
-                  src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop"
-                  alt="Concert"
+                  src="/assets/events/sunidhi-chauhan.png"
+                  alt="Sunidhi Chauhan I Am Home Tour"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale"
                 />
@@ -52,10 +52,11 @@ export default function Events() {
               <div className="flex justify-between items-start border-t border-white/5 pt-4 group-hover:border-red-600/30 transition-colors">
                 <div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-1 group-hover:text-red-500 transition-colors duration-300">
-                    Vishal & Shekhar
+                    I Am Home
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-                    Toronto • 2024
+        
+                     Sunidhi Chauhan
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">
@@ -71,25 +72,25 @@ export default function Events() {
               <div className="absolute inset-0 bg-red-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
               <div className="relative overflow-hidden aspect-3/4 mb-6 border border-white/10 group-hover:border-red-600/30 transition-all duration-500">
                 <Image
-                  src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop"
-                  alt="Concert"
+                  src="/assets/events/ninety.png"
+                  alt="Unforgettable 90's Concert"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-60"></div>
                 <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                  <span className="inline-block px-3 py-1 bg-red-700 text-white text-[10px] uppercase tracking-widest font-bold">
-                    Limited
+                  <span className="inline-block px-3 py-1 bg-white text-black text-[10px] uppercase tracking-widest font-bold">
+                    Past Event
                   </span>
                 </div>
               </div>
               <div className="flex justify-between items-start border-t border-white/5 pt-4 group-hover:border-red-600/30 transition-colors">
                 <div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-1 group-hover:text-red-500 transition-colors duration-300">
-                    Bollywood Nights
+                    Unforgettable 90&apos;s
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-                    Vancouver • 2024
+                  Kumar sanu & Sadhana Sargam
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">
@@ -105,8 +106,8 @@ export default function Events() {
               <div className="absolute inset-0 bg-red-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
               <div className="relative overflow-hidden aspect-3/4 mb-6 border border-white/10 group-hover:border-red-600/30 transition-all duration-500">
                 <Image
-                  src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
-                  alt="Concert"
+                  src="/assets/events/sonu-nigam-poster.jpg"
+                  alt="Sonu Nigam Live"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale"
                 />
@@ -120,10 +121,10 @@ export default function Events() {
               <div className="flex justify-between items-start border-t border-white/5 pt-4 group-hover:border-red-600/30 transition-colors">
                 <div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-1 group-hover:text-red-500 transition-colors duration-300">
-                    Summer Jam
+                   Sau Saal Pehle
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-                    Montreal • 2023
+             Sonu Nigam
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">

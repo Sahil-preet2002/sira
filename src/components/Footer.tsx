@@ -26,7 +26,7 @@ export default function Footer() {
 
           <div className="flex gap-8">
             <Link
-              href="#"
+              href="https://www.instagram.com/siraentertainmentltd/?hl=en"
               className="text-gray-500 hover:text-white transition-colors uppercase text-sm tracking-widest"
             >
               Instagram
@@ -35,10 +35,10 @@ export default function Footer() {
               href="#"
               className="text-gray-500 hover:text-white transition-colors uppercase text-sm tracking-widest"
             >
-              Twitter
+              Tiktok
             </Link>
             <Link
-              href="#"
+              href="https://www.facebook.com/SiRaEntertainmentLtd/"
               className="text-gray-500 hover:text-white transition-colors uppercase text-sm tracking-widest"
             >
               Facebook
