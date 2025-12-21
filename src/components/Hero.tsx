@@ -132,7 +132,7 @@ export default function Hero() {
               <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse shadow-[0_0_8px_rgba(220,38,38,0.8)]"></span>
               <div className="flex items-center gap-2 sm:gap-4 text-white font-mono text-[10px] sm:text-xs tracking-widest uppercase">
                 <span className="text-white/60 hidden sm:inline">
-                  Event Starts In:
+                  On Sale Starts At:
                 </span>
                 <div className="flex gap-2">
                   <span>{timeLeft.d}d</span>
@@ -149,11 +149,11 @@ export default function Hero() {
 
           {/* Main Headline - Perfectly Balanced */}
           <div className="flex flex-col items-center gap-1 sm:gap-4 mix-blend-difference text-white">
-            <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight">
+            <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight">
               WHERE LEGENDS
             </h1>
             <span className="hero-divider w-8 sm:w-12 h-[2px] bg-red-500 scale-x-0"></span>
-            <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight italic">
+            <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight italic">
               COME ALIVE
             </h1>
           </div>
