@@ -30,46 +30,36 @@ export default function Navbar() {
         className="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-xl bg-black/40 border-b border-white/10"
         id="navbar"
       >
-        <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
-          {/* Logo */}
-          <Link href="#" className="flex flex-col group items-center">
-            <div className="relative h-12 w-8 md:h-16 md:w-10">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 h-20 md:h-28 flex justify-between items-center relative">
+          {/* LEFT SECTION: Balaji Logo (Pinned) */}
+          <div className="hidden md:flex items-center">
+            <div className="relative h-12 w-12 xl:h-16 xl:w-16">
               <Image
-                src="/logo.png"
-                alt="SiRa Logo"
+                src="/assets/logos/balaji.png"
+                alt="Balaji Logo"
                 fill
-                className="object-contain drop-shadow-[0_0_10px_rgba(214,0,28,0.5)]"
+                className="object-contain"
                 priority
               />
             </div>
-          </Link>
+          </div>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-12">
+          {/* CENTER ELEMENTS - ABSOLUTE POSITIONING FOR PERFECT CENTER */}
+
+          {/* 1. Navigation Links (Left of Center) */}
+          <div className="hidden md:flex absolute right-[50%] top-1/2 -translate-y-1/2 items-center gap-6 xl:gap-8 mr-16 xl:mr-20">
             <Link
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
                 window.lenis?.scrollTo("#about");
               }}
-              className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors relative group"
+              className="px-5 py-2 text-xs xl:text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer rounded-sm"
             >
               About
-              <span className="absolute -bottom-2 left-0 w-0 h-px bg-red-600 transition-all group-hover:w-full"></span>
             </Link>
-            {/* <Link
-              href="#services"
-              onClick={(e) => {
-                e.preventDefault();
-                window.lenis?.scrollTo("#services");
-              }}
-              className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors relative group"
-            >
-              Services
-              <span className="absolute -bottom-2 left-0 w-0 h-px bg-red-600 transition-all group-hover:w-full"></span>
-            </Link> */}
 
-            {/* Desktop Dropdown */}
+            {/* Events Dropdown */}
             <div className="relative group">
               <Link
                 href="#events"
@@ -77,52 +67,88 @@ export default function Navbar() {
                   e.preventDefault();
                   window.lenis?.scrollTo("#events");
                 }}
-                className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors relative flex items-center gap-1 group-hover:text-red-600"
+                className="px-5 py-2 text-xs xl:text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer flex items-center gap-2 group-hover:bg-red-700 group-hover:text-white rounded-sm"
               >
                 Events
-                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                <span className="absolute -bottom-2 left-0 w-0 h-px bg-red-600 transition-all group-hover:w-full"></span>
+                <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 transition-transform group-hover:rotate-180" />
               </Link>
 
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                 <div className="bg-black/90 backdrop-blur-xl border border-white/10 p-4 min-w-[200px] flex flex-col gap-2 shadow-2xl rounded-sm">
                   <Link
                     href="/upcoming-events"
-                    className="text-sm text-gray-300 hover:text-red-500 uppercase tracking-widest py-2 px-4 hover:bg-white/5 transition-all text-center"
+                    className="text-xs xl:text-sm text-gray-300 hover:text-red-500 uppercase tracking-widest py-2 px-4 hover:bg-white/5 transition-all text-center rounded-sm"
                   >
                     Upcoming
                   </Link>
                   <Link
                     href="/past-events"
-                    className="text-sm text-gray-300 hover:text-red-500 uppercase tracking-widest py-2 px-4 hover:bg-white/5 transition-all text-center"
+                    className="text-xs xl:text-sm text-gray-300 hover:text-red-500 uppercase tracking-widest py-2 px-4 hover:bg-white/5 transition-all text-center rounded-sm"
                   >
                     Past
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
 
+          {/* 2. Sira Logo (Exact Center) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <Link
+              href="#"
+              className="block relative h-16 w-12 md:h-20 md:w-16 group"
+            >
+              <Image
+                src="/assets/logos/sira.png"
+                alt="SiRa Logo"
+                fill
+                className="object-contain drop-shadow-[0_0_15px_rgba(214,0,28,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(214,0,28,0.6)] transition-all duration-300"
+                priority
+              />
+            </Link>
+          </div>
+
+          {/* 3. Action Buttons (Right of Center) */}
+          <div className="hidden md:flex absolute left-[50%] top-1/2 -translate-y-1/2 items-center gap-4 ml-16 xl:ml-20">
             <button
               onClick={() => window.openModal?.("Contact")}
-              className="border border-red-700/50 px-6 py-2 text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer"
+              className="px-5 py-2 text-xs xl:text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer rounded-sm"
             >
               Inquire
             </button>
             <button
               onClick={() => window.openModal?.("Tickets")}
-              className="bg-red-700 px-6 py-2 text-sm uppercase tracking-widest text-white hover:bg-red-800 transition-all duration-300 cursor-pointer"
+              className="px-5 py-2 text-xs xl:text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer rounded-sm"
             >
               Buy Tickets
             </button>
           </div>
 
-          {/* Mobile Menu Icon */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden text-white hover:text-red-600 transition-colors z-50 relative cursor-pointer"
-          >
-            <AlignRight className="w-8 h-8" />
-          </button>
+          {/* RIGHT SECTION: Paradox Logo (Pinned) */}
+          <div className="hidden md:flex items-center">
+            <div className="relative h-10 w-24 xl:h-12 xl:w-28">
+              <Image
+                src="/assets/logos/paradox.png"
+                alt="Paradox Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* MOBILE VIEW: Toggle + Spacer to balance Center Logo */}
+          <div className="flex md:hidden justify-between w-full items-center">
+            {/* Empty div to balance the flex (since logo is absolute center) or just AlignRight on the right */}
+            {/* Actually, if logo is absolute center, we just need the hamburger on the right. */}
+            <div className="w-8"></div> {/* Spacer */}
+            <button
+              onClick={toggleMobileMenu}
+              className="text-white hover:text-red-600 transition-colors z-50 relative cursor-pointer"
+            >
+              <AlignRight className="w-8 h-8" />
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
@@ -176,7 +202,8 @@ export default function Navbar() {
                   About
                 </span>
               </Link>
-              <Link
+              {/* Services Link - Commented Out */}
+              {/* <Link
                 href="#services"
                 onClick={(e) => {
                   e.preventDefault();
@@ -191,7 +218,7 @@ export default function Navbar() {
                 <span className="font-serif font-bold text-4xl text-white group-hover:translate-x-2 transition-transform duration-300">
                   Services
                 </span>
-              </Link>
+              </Link> */}
 
               {/* Mobile Events Dropdown */}
               <div className="border-b border-white/5 pb-4">
@@ -206,7 +233,7 @@ export default function Navbar() {
                     className="group flex items-end gap-4 flex-1"
                   >
                     <span className="text-xs font-mono text-red-700/50 group-hover:text-red-600 transition-colors mb-1">
-                      03
+                      02
                     </span>
                     <span className="font-serif font-bold text-4xl text-white group-hover:translate-x-2 transition-transform duration-300">
                       Events
@@ -254,6 +281,26 @@ export default function Navbar() {
 
             {/* Footer Action */}
             <div className="mt-auto">
+              {/* Mobile Logos Display */}
+              <div className="flex justify-center gap-8 mb-8 opacity-70">
+                <div className="relative h-10 w-10">
+                  <Image
+                    src="/assets/logos/balaji.png"
+                    alt="Balaji"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="relative h-8 w-20">
+                  <Image
+                    src="/assets/logos/paradox.png"
+                    alt="Paradox"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+
               <button
                 onClick={() => {
                   closeMobileMenu();
