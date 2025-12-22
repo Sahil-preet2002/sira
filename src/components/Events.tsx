@@ -55,8 +55,7 @@ export default function Events() {
                     I Am Home
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-        
-                     Sunidhi Chauhan
+                    Sunidhi Chauhan
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">
@@ -87,10 +86,10 @@ export default function Events() {
               <div className="flex justify-between items-start border-t border-white/5 pt-4 group-hover:border-red-600/30 transition-colors">
                 <div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-1 group-hover:text-red-500 transition-colors duration-300">
-                    Unforgettable 90&apos;s
+                   The Superhit Tour
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-                  Kumar sanu & Sadhana Sargam
+                  Vishal and Sheykhar
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">
@@ -106,7 +105,7 @@ export default function Events() {
               <div className="absolute inset-0 bg-red-600/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
               <div className="relative overflow-hidden aspect-3/4 mb-6 border border-white/10 group-hover:border-red-600/30 transition-all duration-500">
                 <Image
-                  src="/assets/events/sonu-nigam-poster.jpg"
+                  src="/assets/events/sonu-nigam.jpg"
                   alt="Sonu Nigam Live"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale"
@@ -121,10 +120,10 @@ export default function Events() {
               <div className="flex justify-between items-start border-t border-white/5 pt-4 group-hover:border-red-600/30 transition-colors">
                 <div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-1 group-hover:text-red-500 transition-colors duration-300">
-                   Sau Saal Pehle
+                    Sau Saal Pehle
                   </h3>
                   <p className="text-sm text-gray-500 uppercase tracking-widest group-hover:text-gray-400">
-             Sonu Nigam
+                    Sonu Nigam
                   </p>
                 </div>
                 <span className="text-white/20 font-serif italic text-4xl group-hover:text-red-700/50 transition-colors duration-500">

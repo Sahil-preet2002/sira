@@ -114,7 +114,7 @@ export default function Navbar() {
               onClick={() => window.openModal?.("Contact")}
               className="px-5 py-2 text-xs xl:text-sm uppercase tracking-widest hover:bg-red-700 hover:text-white transition-all duration-300 cursor-pointer rounded-sm"
             >
-              Inquire
+              Contact us
             </button>
             <button
               onClick={() => window.openModal?.("Tickets")}
@@ -317,7 +317,7 @@ export default function Navbar() {
                 }}
                 className="w-full py-5 border border-red-700/30 text-white uppercase tracking-widest text-xs hover:bg-red-700 hover:text-white transition-colors mb-8 cursor-pointer"
               >
-                Inquire Now
+                Contact Now
               </button>
 
               <div className="flex justify-between items-center text-gray-600 text-[10px] uppercase tracking-widest border-t border-white/5 pt-6">
