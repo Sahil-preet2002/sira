@@ -128,7 +128,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <div className="relative h-10 w-24 xl:h-12 xl:w-28">
               <Image
-                src="/assets/logos/paradox.png"
+                src="/paradox-logo.png"
                 alt="Paradox Logo"
                 fill
                 className="object-contain"
@@ -293,7 +293,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative h-8 w-20">
                   <Image
-                    src="/assets/logos/paradox.png"
+                    src="/paradox-logo.png"
                     alt="Paradox"
                     fill
                     className="object-contain"
