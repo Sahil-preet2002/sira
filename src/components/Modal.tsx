@@ -18,7 +18,6 @@ export default function Modal() {
       setIsOpen(true);
     };
 
-
     window.addEventListener("open-sira-modal", handleOpen as EventListener);
     return () =>
       window.removeEventListener(
@@ -26,7 +25,6 @@ export default function Modal() {
         handleOpen as EventListener
       );
   }, []);
-
 
   // Handle close
   const closeModal = () => {
@@ -44,7 +42,8 @@ export default function Modal() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/contact", {
+      const baseUrl = process.env.NEXT_PUBLIC_URL || "";
+      const res = await fetch(`${baseUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
