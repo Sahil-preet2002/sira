@@ -112,10 +112,7 @@ export default function Hero() {
             playsInline
             className="w-full h-full object-cover scale-105"
           >
-            <source
-              src="https://0q6cvqlghb3ubdsz.public.blob.vercel-storage.com/bg_video.mp4"
-              type="video/mp4"
-            />
+            <source src="/bg_video.mp4" type="video/mp4" />
           </video>
           {/* Elegant Dark Overlay */}
           <div className="absolute inset-0 bg-black/70 sm:bg-black/30 mix-blend-multiply"></div>
@@ -150,7 +147,7 @@ export default function Hero() {
           {/* Main Headline - Perfectly Balanced */}
           <div className="flex flex-col items-center gap-1 sm:gap-4 mix-blend-difference text-white">
             <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight">
-              WHERE LEGENDS
+              WHERE <span className="text-red-600">LEGENDS</span>
             </h1>
             <span className="hero-divider w-8 sm:w-12 h-[2px] bg-red-500 scale-x-0"></span>
             <h1 className="hero-text-reveal overflow-hidden font-serif font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight italic">

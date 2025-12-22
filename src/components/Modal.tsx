@@ -139,11 +139,11 @@ export default function Modal() {
             {context === "Tickets" ? "Buy Tickets" : "Contact Us"}
           </h2>
           {/* Tag Line */}
-          <p className="text-white/70 text-sm md:text-base mb-4 font-light tracking-wide">
+          {/* <p className="text-white/70 text-sm md:text-base mb-4 font-light tracking-wide">
             {context === "Tickets"
               ? "Proceed to Ticketmaster to move ahead."
               : "Get in touch with us for any enquiries."}
-          </p>
+          </p> */}
           <div className="w-16 h-px bg-red-700 mx-auto"></div>
         </div>
 

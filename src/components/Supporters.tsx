@@ -7,9 +7,14 @@ export default function Supporters() {
   const logos = [
     "/assets/supporters/supporter-1.png",
     "/assets/supporters/supporter-2.png",
-    "/assets/supporters/supporter-3.jpg",
+    "/assets/supporters/supporter-3.png",
     "/assets/supporters/supporter-4.png",
     "/assets/supporters/supporter-5.png",
+    "/assets/supporters/supporter-6.png",
+    "/assets/supporters/supporter-7.png",
+    "/assets/supporters/supporter-8.png",
+    "/assets/supporters/supporter-9.png",
+    "/assets/supporters/supporter-10.png",
   ];
 
   // Duplicate for seamless loop (enough to cover wide screens)
@@ -20,7 +25,7 @@ export default function Supporters() {
       <div className="container mx-auto px-4 mb-12 text-center">
         <GSAPReveal>
           <h2 className="font-serif font-bold text-3xl md:text-5xl text-white mb-2">
-            THANKS TO ALL <span className="text-red-600">SUPPORTERS</span>
+            THANKS TO OUR <span className="text-red-600">SUPPORTERS</span>
           </h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mt-4"></div>
         </GSAPReveal>
