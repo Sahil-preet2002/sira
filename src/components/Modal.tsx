@@ -18,24 +18,7 @@ export default function Modal() {
       setIsOpen(true);
     };
 
-    // We can also just use the ID-based class toggling for compatibility with my previous buttons
-    // But a cleaner way is to use an effect to check for class changes if I wanted to stick to that.
-    // However, since I control the buttons (Navbar, Hero), I can change them to dispatch an event?
-    // OR, I can just rely on the IDs.
-    // The previous buttons used: document.getElementById("contact-modal").classList.remove("hidden")
-    // So let's respect that "hidden" class approach but wrapped in React.
-    // Actually, forcing React to sync with classList changes on itself is tricky.
-    // It is better to use a global event system or Context.
 
-    // Changing strategy: I will modify the Buttons in Navbar/Hero to dispatch a CustomEvent.
-    // But since I already wrote them to use getElementById...
-    // I can make this component bind to the ID and manually observe mutation? No that's overengineering.
-
-    // I will simply ADD the ids to this component and let the class logic work?
-    // If I use `className={isOpen ? 'flex' : 'hidden'}`, React controls the class.
-    // If I change the class via DOM, React might mismatch.
-
-    // Let's implement a listener for a custom event 'openModal'.
     window.addEventListener("open-sira-modal", handleOpen as EventListener);
     return () =>
       window.removeEventListener(
@@ -44,24 +27,13 @@ export default function Modal() {
       );
   }, []);
 
-  // For compatibility with the `document.getElementById` calls I realized I put in Navbar/Hero:
-  // I should update Navbar/Hero to use `window.dispatchEvent` or just use a simple Context.
-  // Since I can't easily change Navbar/Hero (already wrote them), I'll make this Modal
-  // accept the IDs `contact-modal` and `tickets-modal`? Use one modal.
-  // I will update the Buttons in `page.tsx` assembly if possible, or just re-write Navbar/Hero slightly?
-  // No, I'll just use a `useEffect` that monkey-patches `window.openModal` as per the original HTML?
-  // Let's go with the Custom Event approach and I will update the buttons in `Navbar` and `Hero`
-  // quickly or just implement the `class` toggling support by NOT using `isOpen` state for visibility
-  // but using a Ref and standard DOM manipulation for show/hide, keeping the content React.
-
-  // Actually, standard DOM manipulation on a Ref is fine for this "porting" task.
 
   // Handle close
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Validate email or phone (simple check for non-empty)
     if (!email || email.length < 3) {
@@ -69,29 +41,40 @@ export default function Modal() {
       return;
     }
     setError(false);
-
-    // Open tab immediately if Tickets to bypass popup blocker
-    let newTab: Window | null = null;
-    if (context === "Tickets") {
-      newTab = window.open("", "_blank");
-    }
-
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      closeModal();
-      if (context === "Tickets" && newTab) {
-        localStorage.setItem("userEmail", email);
-        newTab.location.href =
-          "https://www.ticketmaster.ca/event/1100638F104A9995";
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ emailOrPhone: email }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      if (context === "Tickets") {
+        window.open(
+          "https://www.ticketmaster.ca/event/1100638F104A9995",
+          "_blank"
+        );
       } else {
         // Trigger Toast
         window.dispatchEvent(new CustomEvent("show-toast"));
       }
+
       setEmail("");
-      // setPhone("");
-    }, 1500);
+      closeModal();
+    } catch (err) {
+      console.error(err);
+
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
