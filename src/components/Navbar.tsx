@@ -33,7 +33,11 @@ export default function Navbar() {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 h-20 md:h-28 flex justify-between items-center relative">
           {/* LEFT SECTION: Balaji Logo (Pinned) */}
           <div className="hidden md:flex items-center">
-            <Link href="/" className="relative h-12 w-12 xl:h-16 xl:w-16">
+            <Link
+              href="https://balajientertainment.com/"
+              target="_blank"
+              className="relative h-12 w-12 xl:h-16 xl:w-16 block"
+            >
               <Image
                 src="/assets/logos/balaji.png"
                 alt="Balaji Logo"
@@ -292,12 +296,18 @@ export default function Navbar() {
               {/* Mobile Logos Display */}
               <div className="flex justify-center gap-8 mb-8 opacity-70">
                 <div className="relative h-10 w-10">
-                  <Image
-                    src="/assets/logos/balaji.png"
-                    alt="Balaji"
-                    fill
-                    className="object-contain"
-                  />
+                  <Link
+                    href="https://balajientertainment.com/"
+                    target="_blank"
+                    className="block w-full h-full relative"
+                  >
+                    <Image
+                      src="/assets/logos/balaji.png"
+                      alt="Balaji"
+                      fill
+                      className="object-contain"
+                    />
+                  </Link>
                 </div>
                 <div className="relative h-8 w-20">
                   <Image
