@@ -21,6 +21,8 @@ export default function Supporters() {
     "/assets/supporters/supporter-31.png",
     "/assets/supporters/supporter-32.png",
     "/assets/supporters/supporter-achal-khanna.png",
+    "/assets/supporters/balaji.png",
+    "/assets/supporters/rmi.png",
   ];
 
   // Duplicate for seamless loop (enough to cover wide screens)
