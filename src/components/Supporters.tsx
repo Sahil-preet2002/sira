@@ -21,13 +21,15 @@ export default function Supporters() {
     // "/assets/supporters/supporter-14.png",
     "/assets/supporters/supporter-15.png",
     "/assets/supporters/supporter-16.png",
-    "/assets/supporters/supporter-17.png",
+    // "/assets/supporters/supporter-17.png",
     "/assets/supporters/supporter-18.png",
     // "/assets/supporters/supporter-19.png",
     // "/assets/supporters/supporter-20.png",
     "/assets/supporters/supporter-21.png",
     "/assets/supporters/supporter-22.png",
     "/assets/supporters/supporter-23.png",
+    // "/assets/supporters/supporter-24.png",
+    "/assets/supporters/supporter-25.png",
   ];
 
   // Duplicate for seamless loop (enough to cover wide screens)
