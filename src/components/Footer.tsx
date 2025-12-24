@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 text-xs text-gray-600 tracking-widest uppercase text-center md:text-left">
-          <p>&copy; 2025 SiRa Entertainment Ltd.</p>
+          <p>&copy; 2025 SiRa Entertainment Ltd. All Rights Reserved.</p>
           <button
             onClick={() => window.lenis?.scrollTo(0)}
             className="group flex items-center gap-2 text-gray-500 hover:text-red-500 transition-colors cursor-pointer"
@@ -55,13 +55,6 @@ export default function Footer() {
             <span>BACK TO TOP</span>
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
           </button>
-          <Link
-            href="https://sahilpreet.in"
-            target="_blank"
-            className="hover:text-white transition-colors"
-          >
-            Designed by Sahilpreet.in
-          </Link>
         </div>
       </div>
     </footer>
